@@ -1,0 +1,197 @@
+@import "variables.scss";
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(to right top, $secondaryBrightColor, #b42680, #8a368a, #5d3e88, $primaryDarkColor);
+    background-attachment: fixed;
+}
+
+.container {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#calculator {
+    background-color: #fff;
+    border-radius: 9px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.form-container {
+    padding: 30px 40px;
+}
+
+.amount-row, .amount-row>div {
+    padding: 0;
+    margin: 0;
+}
+
+.amount-row{
+    margin-bottom: 8px;
+}
+
+.amount-label-container {
+    padding: 7px 8px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.figure-label {
+    color: $darkColor;
+    font-weight: normal;
+    font-stretch: expanded;
+}
+
+.figure-value {
+    color: $grayColor;
+    font-weight: lighter;
+    font-stretch: expanded;
+}
+
+.amount-label, .tenure-label {
+    font-size: 15px;
+}
+
+.amount-value, .tenure-value {
+    font-size: 25px;
+}
+
+.amount .amount-value {
+    text-align: right;
+}
+
+.slider-container input[type=range]::-webkit-slider-thumb {
+    color: $primaryBrightColor;
+    border: 1px solid $primaryBrightColor;
+    background: $primaryBrightColor;
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    width: 21px;
+    height: 21px;
+    margin-top: -7px;
+}
+
+.slider-container input[type=range]::-webkit-slider-runnable-track {
+    background: #f5e2ea;
+    height: 6px;
+    // width: 900px;
+}
+
+.slider-container input[type=range]::-moz-range-thumb {
+    color: $primaryBrightColor;
+    border: 1px solid $primaryBrightColor;
+    background: $primaryBrightColor;
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    width: 21px;
+    height: 21px;
+    margin-top: -7px;
+}
+
+.slider-container input[type=range]::-moz-range-track {
+    background: #f5e2ea;
+    height: 6px;
+}
+
+.slider-container input[type=range]::-ms-thumb {
+    color: $primaryBrightColor;
+    border: 1px solid $primaryBrightColor;
+    background: $primaryBrightColor;
+    -webkit-box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    -moz-box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    box-shadow: 0px 0px 0px 4px rgba(247,143,185,1);
+    width: 21px;
+    height: 21px;
+    margin-top: -7px;
+}
+
+.slider-container input[type=range]::-ms-track {
+    background: transparent;
+    height: 6px;
+}
+
+.slider-container input[type=range]::-ms-fill-lower {
+    background: #f5e2ea;
+}
+
+.slider-container input[type=range]::-ms-fill-upper {
+    background: #f5e2ea;
+}
+
+.tenure-slider-container {
+    padding: 0;
+}
+
+.tenure-value-container {
+    margin: 20px 0 2px;
+}
+
+.payment-detail-container {
+    background-color: $whiteSmokeColor;
+    padding: 0;
+    margin-top: 8px;
+}
+
+.row.payment-detail-row {
+    padding: 0;
+    margin: 0;
+}
+
+.payment-detail-row .payment-detail-column {
+    padding: 23px 0;
+}
+
+.payment-detail-column .payment-value {
+    font-size: 35px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.payment-detail-column .payment-label {
+    font-size: 11px;
+}
+
+.button-container {
+    background-color: $darkColor;
+    padding: 0;
+    border-radius: 0px 0px 9px 9px;
+}
+
+.button-container .submit-button {
+    padding: 35px;
+}
+
+.button-container .submit-button button {
+    background-color: $primaryBrightColor;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.button-container .submit-button button svg {
+    font-size: 10px;
+}
+
+@include media-breakpoint-down(xs) {
+    .amount-value {
+        font-size: 18px;
+    }
+
+    .amount-label {
+        font-size: 11px;
+    }
+
+    .amount-value-container {
+        padding-top: 10px;
+    }
+}
