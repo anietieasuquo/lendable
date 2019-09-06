@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider it should render correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Slider should render correctly 1`] = `ShallowWrapper {}`;

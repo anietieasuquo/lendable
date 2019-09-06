@@ -1,4 +1,4 @@
-import * as ACTION_TYPES from '../store/actions/actionTypes';
+import * as ACTION_TYPES from '../../../store/actions/actionTypes';
 
 describe("Redux Store Action Types", () => {
     test("it should return action action type", () => {

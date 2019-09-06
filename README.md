@@ -1,3 +1,7 @@
+![Design](/src/static/img/screenshot.png)
+
+This is a simple loan calculator that enables users to easily and quickly calculate their loan using the loan amount and tenure sliders and immediately see the interest rate and total monthly repayment.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -22,9 +26,3 @@ Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
-
-### `PLEASE NOTE`
-
-- Due to time constraints I couldn't go ahead with integration tests with cypress, but in a real world application this would be done.
-
-- This application was developed in a very limited time as we've been working around the clock to meet up with our current sprint deadline. As such there are decisions that were made to save time, but in a real application a lot better would be done.

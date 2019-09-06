@@ -1,4 +1,40 @@
-import { calculateLoan } from '../helper/loanHelper';
+import { tenureToString, convertToCurrency, calculateLoan } from '../../helper/loanHelper';
+
+describe("Tenure to string", () => {
+    test("it should convert whole tenure value to string", () => {
+        const input = 12;
+        const output = '1 year';
+
+        expect(tenureToString(input)).toEqual(output);
+    });
+});
+
+describe("Tenure to string", () => {
+    test("it should convert fractional tenure value to string", () => {
+        const input = 30;
+        const output = '2½ years';
+
+        expect(tenureToString(input)).toEqual(output);
+    });
+});
+
+describe("Convert to currency", () => {
+    test("it should convert value to currency", () => {
+        const input = 300;
+        const output = '£300.00';
+
+        expect(convertToCurrency(input, 2)).toEqual(output);
+    });
+});
+
+describe("Convert to currency", () => {
+    test("it should convert value to specified currency", () => {
+        const input = 300;
+        const output = '$300.00';
+
+        expect(convertToCurrency(input, 2, 'USD')).toEqual(output);
+    });
+});
 
 describe("Calculate loan for class-1 interest (5%)", () => {
     test("it should calculate loan using amount, tenure, and class-1 interest (5%)", () => {
@@ -11,7 +47,7 @@ describe("Calculate loan for class-1 interest (5%)", () => {
             amount: input.amount,
             tenure: input.tenure,
             interestRate: 5,
-            monthlyRepayment: '4.17'
+            monthlyRepayment: '112.83'
         };
 
         expect(calculateLoan(input)).toEqual(output);
@@ -29,7 +65,7 @@ describe("Calculate loan for class-2 interest (10%)", () => {
             amount: input.amount,
             tenure: input.tenure,
             interestRate: 10,
-            monthlyRepayment: '50.00'
+            monthlyRepayment: '880.58'
         };
 
         expect(calculateLoan(input)).toEqual(output);
@@ -47,7 +83,7 @@ describe("Calculate loan for class-3 interest  (15%)", () => {
             amount: input.amount,
             tenure: input.tenure,
             interestRate: 15,
-            monthlyRepayment: '162.50'
+            monthlyRepayment: '2398.25'
         };
 
         expect(calculateLoan(input)).toEqual(output);
@@ -65,7 +101,7 @@ describe("Calculate loan for class-4 interest (20%)", () => {
             amount: input.amount,
             tenure: input.tenure,
             interestRate: 20,
-            monthlyRepayment: '300.00'
+            monthlyRepayment: '4054.77'
         };
 
         expect(calculateLoan(input)).toEqual(output);

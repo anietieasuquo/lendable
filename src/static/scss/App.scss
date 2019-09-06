@@ -69,6 +69,10 @@ body {
     text-align: right;
 }
 
+.slider-container {
+    padding: 0;
+}
+
 .slider-container input[type=range]::-webkit-slider-thumb {
     color: $primaryBrightColor;
     border: 1px solid $primaryBrightColor;
@@ -84,7 +88,6 @@ body {
 .slider-container input[type=range]::-webkit-slider-runnable-track {
     background: #f5e2ea;
     height: 6px;
-    // width: 900px;
 }
 
 .slider-container input[type=range]::-moz-range-thumb {
@@ -127,10 +130,6 @@ body {
 
 .slider-container input[type=range]::-ms-fill-upper {
     background: #f5e2ea;
-}
-
-.tenure-slider-container {
-    padding: 0;
 }
 
 .tenure-value-container {

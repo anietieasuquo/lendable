@@ -2,7 +2,7 @@ import React from "react";
 import { create, act } from "react-test-renderer";
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Enzyme, { shallow, mount } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import rootReducer from '../store/reducers/reducer';
 import App from '../App';

@@ -1,6 +1,6 @@
-import * as ACTION_TYPES from '../store/actions/actionTypes';
-import rootReducer from '../store/reducers/reducer';
-import { calculateLoan } from '../helper/loanHelper';
+import * as ACTION_TYPES from '../../../store/actions/actionTypes';
+import rootReducer from '../../../store/reducers/reducer';
+import { calculateLoan } from '../../../helper/loanHelper';
 
 describe("Root Reducer", () => {
     test("with valid payload and action type it should return state and loan data", () => {

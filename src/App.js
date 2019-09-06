@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
-import { tenureToString, convertToCurrency } from './util/util';
+import { tenureToString, convertToCurrency } from './helper/loanHelper';
 import * as ACTIONS from './store/actions/actions';
+import Slider from './components/Slider';
+import LoanDetail from './components/LoanDetail';
 import './static/scss/App.scss';
 
 class App extends Component {
@@ -35,12 +37,10 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="row slider-container">
-                  <div className="col-lg-12 col-12">
-                    <input type="range" className="custom-range" id="amountRange" min="1000" max="20000" step="100" defaultValue={this.props.amount} onInput={this.handleChangeAmount} />
-                  </div>
-                </div>
-                <div className="row slider-container tenure-value-container text-center">
+
+                <Slider id="amountRange" min="1000" max="20000" step="100" defaultValue={this.props.amount} onInput={this.handleChangeAmount} />
+
+                <div className="row tenure-value-container text-center">
                   <div className="col-lg-12 col-12">
                     <h3>
                       <span className="tenure-label figure-label">Over</span>
@@ -50,26 +50,16 @@ class App extends Component {
                       </span>
                     </h3>
                   </div>
-                  <div className="col-lg-12 col-12 mt-10 tenure-slider-container">
-                    <input type="range" className="custom-range" id="tenureRange" min="12" max="60" step="6" defaultValue={this.props.tenure} onInput={this.handleChangeTenure} />
-                  </div>
                 </div>
+
+                <Slider id="tenureRange" min="12" max="60" step="6" defaultValue={this.props.tenure} onInput={this.handleChangeTenure} />
+
               </form>
             </div>
             <div className="payment-detail-container">
               <div className="row payment-detail-row text-center">
-                <div className="col-lg-6 col-6 payment-detail-column">
-                  <div className="interest-rate-container payment-figure">
-                    <h3 className="payment-value figure-value">{this.props.interestRate}%</h3>
-                    <span className="payment-label figure-label">Interest rate</span>
-                  </div>
-                </div>
-                <div className="col-lg-6 col-6 payment-detail-column">
-                  <div className="repayment-container payment-figure">
-                    <h3 className="payment-value figure-value">{convertToCurrency(this.props.monthlyRepayment, 0)}</h3>
-                    <span className="payment-label figure-label">Monthly repayment</span>
-                  </div>
-                </div>
+                <LoanDetail title="Interest rate" value={`${this.props.interestRate}%`} />
+                <LoanDetail title="Monthly repayment" value={convertToCurrency(this.props.monthlyRepayment, 0)} />
               </div>
             </div>
             <div className="button-container">
